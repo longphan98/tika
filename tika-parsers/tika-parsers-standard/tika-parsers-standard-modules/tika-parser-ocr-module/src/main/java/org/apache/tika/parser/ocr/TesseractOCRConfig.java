@@ -410,6 +410,7 @@ public class TesseractOCRConfig implements Serializable {
      *               Default value is triangle.
      */
     public void setFilter(String filter) {
+        // CS304 Issue link: https://issues.apache.org/jira/browse/TIKA-2392
         if (filter == null) {
             throw new IllegalArgumentException(
                     "Filter value cannot be null. Valid values are point, hermite, " +

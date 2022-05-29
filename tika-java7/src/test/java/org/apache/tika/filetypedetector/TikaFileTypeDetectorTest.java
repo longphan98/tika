@@ -47,10 +47,12 @@ public class TikaFileTypeDetectorTest {
         testDirectory = tempDir;
         System.out.println(testDirectory.toAbsolutePath());
         try (InputStream is = this.getClass().getResourceAsStream(TEST_CLASSPATH)) {
+            // CS304 Issue link: https://issues.apache.org/jira/browse/TIKA-2392
             assert is != null;
             Files.copy(is, testDirectory.resolve(TEST_HTML));
         }
         try (InputStream is = this.getClass().getResourceAsStream(TEST_CLASSPATH)) {
+            // CS304 Issue link: https://issues.apache.org/jira/browse/TIKA-2392
             assert is != null;
             Files.copy(is, testDirectory.resolve(TEST_UNRECOGNISED_EXTENSION));
         }

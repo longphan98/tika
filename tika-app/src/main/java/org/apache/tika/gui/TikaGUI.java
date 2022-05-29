@@ -611,6 +611,7 @@ public class TikaGUI extends JFrame implements ActionListener, HyperlinkListener
 
             int splitAt = embeddedName.lastIndexOf('.');
             if (splitAt > 0) {
+                // CS304 Issue link: https://issues.apache.org/jira/browse/TIKA-2392
                 embeddedName = embeddedName.substring(splitAt);
             }
 

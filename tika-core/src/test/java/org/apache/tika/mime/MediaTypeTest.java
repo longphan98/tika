@@ -28,7 +28,7 @@ import org.junit.jupiter.api.Test;
 
 public class MediaTypeTest {
 
-    //CS304 (manually written) Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-1800
+    //CS304 Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-1800
     @Test
     public void testEscapedSpecialChar1() throws TikaException, SAXException, IOException {
         MediaType mType = new MediaType(MediaType.APPLICATION_XML, "x-report", "#report@");
@@ -36,7 +36,7 @@ public class MediaTypeTest {
         assertEquals("application/xml; x-report=\"#report\\@\"", cType);
     }
 
-    //CS304 (manually written) Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-1800
+    //CS304 Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-1800
     @Test
     public void testEscapedSpecialChar2() throws TikaException, SAXException, IOException {
         MediaType mType = new MediaType(MediaType.APPLICATION_XML, "x-report", "#report?");

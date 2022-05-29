@@ -43,6 +43,7 @@ public class TesseractOCRConfigTest extends TikaTest {
         assertEquals("gray", config.getColorspace(), "Invalid default colorpsace value");
         assertEquals("triangle", config.getFilter(), "Invalid default filter value");
         assertEquals(200, config.getResize(), "Invalid default resize value");
+        // CS304 Issue link: https://issues.apache.org/jira/browse/TIKA-2392
         assertFalse(config.isApplyRotation(), "Invalid default applyRotation value");
     }
 
@@ -64,6 +65,7 @@ public class TesseractOCRConfigTest extends TikaTest {
         assertEquals(8, config.getDepth(), "Invalid overridden depth value");
         assertEquals("box", config.getFilter(), "Invalid overridden filter value");
         assertEquals(300, config.getResize(), "Invalid overridden resize value");
+        // CS304 Issue link: https://issues.apache.org/jira/browse/TIKA-2392
         assertFalse(config.isApplyRotation(), "Invalid default applyRotation value");
     }
 
@@ -247,7 +249,7 @@ public class TesseractOCRConfigTest extends TikaTest {
         });
     }
 
-    //CS304 (manually written) Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-2392
+    //CS304 Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-2392
     @Test
     public void testNullFilter() {
         TesseractOCRConfig config = new TesseractOCRConfig();
@@ -256,7 +258,7 @@ public class TesseractOCRConfigTest extends TikaTest {
         });
     }
 
-    //CS304 (manually written) Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-2392
+    //CS304 Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-2392
     @Test
     public void testGoodFilter() {
         TesseractOCRConfig config = new TesseractOCRConfig();
