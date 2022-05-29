@@ -247,11 +247,21 @@ public class TesseractOCRConfigTest extends TikaTest {
         });
     }
 
+    //CS304 (manually written) Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-2392
     @Test
     public void testNullFilter() {
         TesseractOCRConfig config = new TesseractOCRConfig();
         assertThrows(IllegalArgumentException.class, () -> {
             config.setFilter(null);
+        });
+    }
+
+    //CS304 (manually written) Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-2392
+    @Test
+    public void testGoodFilter() {
+        TesseractOCRConfig config = new TesseractOCRConfig();
+        assertThrows(IllegalArgumentException.class, () -> {
+            config.setFilter("Cubic");
         });
     }
 

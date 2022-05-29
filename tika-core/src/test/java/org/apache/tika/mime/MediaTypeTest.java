@@ -28,6 +28,24 @@ import org.junit.jupiter.api.Test;
 
 public class MediaTypeTest {
 
+    //CS304 (manually written) Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-1800
+    @Test
+    public void testEscapedSpecialChar1() throws TikaException, SAXException, IOException {
+        MediaType mType = new MediaType(MediaType.APPLICATION_XML, "x-report", "#report@");
+        String cType = mType.toString();
+        assertEquals("application/xml; x-report=\"#report\\@\"", cType);
+    }
+
+    //CS304 (manually written) Issue link: https://issues.apache.org/jira/projects/TIKA/issues/TIKA-1800
+    @Test
+    public void testEscapedSpecialChar2() throws TikaException, SAXException, IOException {
+        MediaType mType = new MediaType(MediaType.APPLICATION_XML, "x-report", "#report?");
+        String cType = mType.toString();
+        mType = MediaType.parse(cType);
+        String report = mType.getParameters().get("x-report");
+        assertEquals("#report?", report);
+    }
+
     @Test
     public void testBasics() {
         assertEquals("application/octet-stream",
